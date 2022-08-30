@@ -1,0 +1,14 @@
+#criando fator
+moeda <- c(2, 1, 1, 2, 2, 1, 1)
+recode <- c(cara = 1, coroa = 2)
+(moeda <- factor(moeda, levels = recode, labels = names(recode)))
+
+#reordenando fator
+(moeda <- relevel(moeda, ref = "cara"))
+
+number <- c(10, 20, 5, 7, 9, 45, 30)
+(moeda <- reorder(moeda, number))
+
+attr(moeda, "scores") <- NULL
+moeda
+
